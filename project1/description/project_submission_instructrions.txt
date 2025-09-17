@@ -1,0 +1,121 @@
+Project Submission Instructions
+
+=========================
+===== Project Setup =====
+=========================
+
+All projects use Jupyter Notebook (https://jupyter.org/) and Python.  Each project has a main page that describes the project and links to starter code, tips and code samples, and a template for your report.  This page describes how to set up and run a project on Google Colab, how to set up an run a project on your own computer, and how to submit your project. 
+
+
+===================================================
+===== Jupyter with Google Colab (Recommended) =====
+===================================================
+
+If available to you, Google Colab can be used to complete your projects. The instructors completed all projects using the free version of Google Colab, but the Pro version could be useful. To set up your project in colab, unzip the starter zip file and upload it to Google Drive.  Then, double-click the starter Jupyter Notebook file (.ipynb) and select Google Colab. You can load and save data from Drive. The one downside of Google Colab is that it does not support interactive figures with matplotlib, but any necessary image coordinates can also be obtained using Gimp or Paint and manually entered into the Notebook. You can also run Jupyter locally following the directions below.
+
+
+========================================
+===== Jupyter on Local Environment =====
+========================================
+
+Mostly, these directions pertain to running Jupyter Notebooks on your own computer, which may be preferable especially if you do not have access to Google Colab or reliable Internet access.
+
+=== Development Environment Setup ===
+There are two different ways to setup environment.
+
+Option 1. Conda (recommended)
+
+For those who have installed, or plan to install anaconda or miniconda, install anaconda/miniconda and run commands below:
+
+	conda create -n cs445 python=3.7
+	conda activate cs445
+	conda install -y numpy scipy opencv matplotlib jupyter
+
+Note that you don't have to use cs445 as your environment name.
+
+Option 2. pip
+
+For those who don't want to use anaconda or miniconda based python, we also provide requirements.txt for pip based packages. Those choosing this option need to install OpenCV 3+/4.
+
+To install dependent python packages, run:
+	pip install -r requirements.txt
+
+Windows users: We recommend using 'cmder', which contains prebuilt bash compliant command prompt.
+
+=== Running Jupyter Notebook ===
+
+To use Jupyter notebook use your favorite terminal to run:
+
+	cd YOUR_PROJECT_DIRECTORY
+	jupyter notebook
+
+Then, your default browser will open up a page that contains files in that directory. Typically, the page will be opened on localhost:8888/tree.
+
+
+=== Understanding Notebook Kernel ===
+
+Each notebook in Jupyter Notebook Local Server is associated with a Kernel.  Whenever a new Notebook is created or opened, the Kernel, a python subprocess is created that contains variables and functions that the Notebook will evaluate.  
+
+For instance, running
+
+	foo = 3
+
+makes variable foo to be stored in the subprocess memory.
+
+Each Kernel can be shutdown, freeing the subprocess and making the Notebook inactive. You can always reactivate Kernels by using Kernels => Restart button on the notebook menu. If there are multiple connections to same notebook, there can be collision of kernel processes. It is not recommended to locally run multiple instances of same notebook.
+
+
+=== Creating new Notebook ===
+
+You can click New button on right top corner of the opened page, and click Python 3 to create new notebook. If you go back to localhost:8888/tree, you will notice that there is a new file created, with Green Book icon. Green indicates that the notebook kernel is active. Each Notebook file has the "ipynb" extension.
+
+** Opening Existing Notebook **
+To open existing notebook, click on ipynb files under localhost:8888/tree. If the notebook kernel was not active, it will be active as you open it. If the notebook kernel was already active, it will connect to the existing kernel.
+
+** Clearing / Resetting notebook **
+You can clear notebook kernel by pressing restart button or Kernel => Restart button. This will wipe out varibles stored in memory in Kernel, and start new subprocess.
+
+** Running code on Notebook **
+To run active code block on Jupyter Notebook, you can simply do Ctrl + Enter (CMD + Enter for mac). To run and select next code block, you can click on Run button or do shift + Enter. Code under Code block will be evaluated, and variables at the top level scope will be kept in memory.
+
+** Closing Notebook Local Server **
+You can prompt shutdown notebook server by pressing ctrl + c in terminal that is running Jupyter Notebook Local Server.
+
+** Visualizing Images on Notebook **
+We recommend using matplotlib (https://matplotlib.org/) for visualizing your results on notebook. Matplotlib can show OpenCV (https://docs.opencv.org/master/) and PIL (https://www.pythonware.com/products/pil/) images on the browser. This is very useful for debugging purposes. 
+
+	import matplotlib.pyplot as plt
+	%matplotlib inline # or `%matplotlib notebook` for interactive plotting
+
+	from PIL import Image
+	import cv2
+
+	# read image using PIL and OpenCV library
+	image_1 = Image.open(PATH_TO_IMAGE)
+	image_2 = cv2.imread(PATH_TO_OTHER_IMAGE)
+	...
+
+	# Display image on notebook
+	fig, axes = plt.subplots(2, 2)
+	axes[0, 0].imshow(image_1)
+	axes[0, 1].imshow(image_2)
+	axes[1, 0].imshow(image_3)
+	axes[1, 1].imshow(image_4)
+
+** Troubleshooting **
+It is common to have problems displaying images or using interactive plots, because these features are OS-dependent.  We recommend that you open the Notebooks in Chrome. If '%matplotlib notebook' is not working or you are having trouble selecting coordinates, use '%matplotlib inline' instead and get the coordinates from Gimp, Paint, or another program.  
+
+
+==============================
+===== Project Submission =====
+==============================
+
+Submit your report, notebook, and code via Coursera. 
+
+Report PDF: Download the provided template or save a copy to Google Drive and edit it to complete your report and save as PDF.  Make sure to complete the expected points at the start of the report, which helps to avoid any misunderstandings. Comments in the grade will explain any differences in the actual grade from your expectation. Also complete the Acknowledgements / Attribution section on the bottom. Failure to list sources is plagiarism.
+
+Notebook PDF: Print your notebook to PDF after running all cells, so that intermediate and final results are visualized. If results on multiple images are required for a project, they do not all need to be shown in the notebook.  The code should be sufficiently clear and commented
+
+Code: Zip the code and images in a file called NETID_proj#.zip, where NETID is your net id. You need to submit both the .zip file and the associated notebook NETID_proj#.pdf file. Do not include large result files in this zip.
+
+Sharing Results: You're encouraged to share your favorite results on Piazza.  This makes the class more fun for everyone. A Piazza post will be created to share results for each project. You can also explain how you got your results, but please do not share your code.

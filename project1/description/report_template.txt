@@ -1,0 +1,64 @@
+Name (netid): Your Name (Your Netid)
+CS 445 - Project 1: Hybrid Images
+
+Complete the claimed points and sections below.  
+
+Total Points Claimed 				[  ] / 130
+
+Hybrid image main result
+Main result and description 		[  ] / 45
+FFT images of main result 		[  ] / 15
+Hybrid images: two additional results  	[  ] / 10 
+Image enhancement tasks (3rd is B&W)
+Contrast enhancement		[  ] / 10
+Color enhancement			[  ] / 10
+Color shift				[  ] / 10
+Quality of results / report			[  ] / 10   
+Color Hybrid Image w/ explanation (B&W)	[  ] / 5
+Gaussian / Laplacian Pyramids (B&W)	[  ] / 15
+
+
+1. Hybrid image main result
+
+Include
+Original and filtered input images
+Hybrid image result
+FFT images of each original and filtered image and the hybrid image
+Description in a few sentences of how it works using the included images as illustrations.  Explain parameter settings and any clever ideas that are incorporated.  
+All results must be based on your own images (can be from web with attribution, but not provided samples)
+
+ 
+2. Hybrid image additional results
+
+Include
+At least two additional results (may not use provided samples). For each, include the input and hybrid image (do not need to show filtered or FFT images)
+ 
+
+3. Image enhancement tasks (2 required, 3 for B&W)
+
+Include
+For at least two out of three enhancement tasks (each is worth 10 points), display original image, modified image, and explanation of how the image was modified
+
+
+4. Quality of results and report
+
+Nothing extra to include.
+
+
+5. Color hybrid result (B&W)
+
+Include
+Original images, hybrid image
+Explanation of method: Is it better to use color for the low-pass, the high-pass, or both?
+
+
+6. Gaussian and Laplacian Pyramids (B&W)
+
+Include
+Gaussian pyramid of main hybrid image result (can be one row of images)
+Laplacian pyramid of main hybrid image result (another row of images) 
+
+
+Acknowledgments / Attribution
+
+List any sources for code or images from outside sources
